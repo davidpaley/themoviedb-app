@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getDiscoverMovies, getConfiguration } from '../../services/movies';
+import { Link } from 'react-router-dom';
+import './index.css';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -13,11 +15,30 @@ const Home = () => {
       setConfig(response);
     })
   }, []);
+
+  const searchMovies = (e) => {
+    console.log(e.target.value);
+  }
+  console.log(movies);
+  console.log(config);
   return (
     <div>
-      <h1>This is the home</h1>
-      {config && <span>config set</span>}
-      {movies && <span>movies set</span>}
+      <div className="search-container">
+        <input 
+          className="search-input" 
+          onChange={searchMovies}
+          placeholder="Search for a movie" />
+        <button className="search-button">Search</button>
+      </div>
+      <div className="movie-grid">
+        {movies && config &&
+        movies.map((movie) => (
+          <Link to={`/movie/${movie.id}`} className="movie-image-link">
+            <img className="image-in-grid" src={`${config.base_url}/${config.poster_sizes[3]}/${movie.poster_path}`} alt="" />
+          </Link>
+        ))}
+        
+      </div>
     </div>
   );
 }

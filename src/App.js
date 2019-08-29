@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Header />
       <Router>
-        <div>
+        <div className="body-section">
           <Route path="/" exact component={Home} />
           <Route path="/movie/:id" component={MovieDetail} />
         </div>
