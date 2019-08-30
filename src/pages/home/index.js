@@ -26,6 +26,12 @@ const Home = () => {
     searchInput = e.target.value;
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch(e);
+    }
+  }
+
   const handleSearch = (e) => {
     if (searchInput) {
       search(searchInput).then(response => {
@@ -72,6 +78,7 @@ const Home = () => {
         <input 
           className="search-input" 
           onChange={handleSearchInput}
+          onKeyDown={handleKeyDown}
           placeholder="Search for a movie" />
         <button 
           className="search-button"
