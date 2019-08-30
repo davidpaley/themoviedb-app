@@ -38,7 +38,7 @@ const Raitings = ({ starSelected, handleStarSelected }) => {
 }
 
 // eslint-disable-next-line react/no-typos
-Raitings.PropTypes = {
+Raitings.propTypes = {
   starSelected: PropTypes.number,
   handleStarSelected: PropTypes.func,
 };

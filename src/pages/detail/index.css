@@ -28,6 +28,24 @@
   cursor: pointer;
 }
 
+.home-button-container {
+  float: left;
+  width: 100%;
+  display: flex;
+  margin-bottom: 2em;
+  justify-content: flex-start;
+}
+
+.home-button {
+  font-size: 1rem;
+  background-color: black;
+  color: white;
+  padding: 1em;
+  border-radius: 13px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 @media screen and (min-width: 64em) {
   .description-container {
     padding: 3em 32em;

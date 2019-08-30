@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getMovie, getConfiguration } from '../../services/movies';
+import { Link } from 'react-router-dom';
 import './index.css';
 
 const MovieDetail = (props) => {
@@ -34,6 +35,14 @@ const MovieDetail = (props) => {
     } = movie;
     return (
       <div>
+        <div className="home-button-container">
+          <Link 
+            className="home-button"
+            to="/">
+              {`< HOME`}
+            </Link>
+          {/* <button className="home-button">{`< HOME`}</button> */}
+        </div>
         <h1>{title}</h1>
         <div className="images-container">
           <img 
