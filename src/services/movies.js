@@ -30,3 +30,9 @@ export async function getDiscoverMovies() {
     method: 'GET',
   });
 }
+
+export async function search(titleToSearch) {
+  return request(`${URL}/search/movie?${API_KEY_LABEL}&query=${titleToSearch}`, {
+    method: 'GET',
+  });
+}

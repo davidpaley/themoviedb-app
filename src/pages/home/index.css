@@ -7,6 +7,8 @@
 .movie-grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-in-grid {
@@ -19,7 +21,7 @@
   font-size: 1rem;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
-  border-radius: 50px;
+  border-radius: 12px;
   border: 2px solid black;
   padding: 20px;
   margin: 2em 0 0;
@@ -38,36 +40,43 @@
 .search-button {
   height: 72px;
   font-size: 1rem;
-  
-  border-radius: 45px;
+  border-radius: 13px;
   background: black;
   color: white;
   top: 34px;
   right: 522px;
-  margin: 0 1em;
-  /* position: absolute; */
+  margin: 0;
+  cursor: pointer;
+}
+
+.search-button:focus {
+  outline: none;
+}
+
+.cr-1 {
+  color: red;
 }
 
 @media screen and (min-width: 64em) {
   .movie-image-link {
     width: 20%;
+    max-width: 25%;
   }
   .search-container {
     display: block;
-    position: relative;
   }
   .search-input {
     margin: 2em;
   }
   .search-button {
     margin: 0;
-    border-radius: 31px;
-    position: absolute;
+    border-radius: 11px;
     height: 79px;
     font-size: 1.5rem;
     top: 32px;
     right: 525px;
-    border-radius: 23px;
     margin: 0;
+    width: 7em;
+    cursor: pointer;
   }
 }

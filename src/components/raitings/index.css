@@ -1,0 +1,51 @@
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+    color: #FFFF00;
+}
+
+.ratingSelected:before {
+  content: "\2605" !important;
+  position: absolute !important;
+  color: #FFFF00 !important;
+}
+
+.raiting-container {
+  margin-bottom: 2em;
+}
+
+.raitingWithoutCalor {
+  content: '';
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  color:#E8E8E8 !important;
+}
+
+@media screen and (max-width: 40em) {
+  
+  
+  .raitingWithoutCalor > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+    color:#E8E8E8;
+  }
+  
+  .raitingWithoutCalor:before {
+  content: "\2605" !important;
+  position: absolute !important;
+  color:#E8E8E8 !important;
+  }
+}
