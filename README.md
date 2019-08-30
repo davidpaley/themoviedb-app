@@ -1,6 +1,6 @@
 ## Description
 
-This project is an example of integration with [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction)
+This project is an example of an integration with [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction)
 
 ## Deployed website
 
