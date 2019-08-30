@@ -20,6 +20,7 @@ const Home = () => {
     getConfiguration().then(response => {
       setConfig(response);
     })
+    searchInput = '';
   }, []);
 
   const handleSearchInput = (e) => {
@@ -71,6 +72,10 @@ const Home = () => {
         </Link>
       ))
   }
+
+  console.log(searchInput);
+  console.log(movies);
+  console.log(searchMovies);
   
   return (
     <div>
