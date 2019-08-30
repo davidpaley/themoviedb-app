@@ -47,6 +47,7 @@
   right: 522px;
   margin: 0;
   cursor: pointer;
+  /* position: absolute; */
 }
 
 .search-button:focus {
@@ -58,12 +59,16 @@
 }
 
 @media screen and (min-width: 64em) {
+  /* .image-in-grid {
+    max-width: 50%;
+  } */
   .movie-image-link {
     width: 20%;
     max-width: 25%;
   }
   .search-container {
     display: block;
+    /* position: relative; */
   }
   .search-input {
     margin: 2em;
@@ -71,6 +76,7 @@
   .search-button {
     margin: 0;
     border-radius: 11px;
+    /* position: absolute; */
     height: 79px;
     font-size: 1.5rem;
     top: 32px;

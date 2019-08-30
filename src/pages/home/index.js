@@ -51,7 +51,9 @@ const Home = () => {
         (movie.vote_average > (starSelected * 2) - 2) && (movie.vote_average <= (starSelected * 2))
       ))
     }
-    
+    if (moviesToShow.length === 0) {
+      return (<h2 className="cr-1">0 movies found..</h2>);
+    }
     return config &&
       moviesToShow.map((movie) => (
         <Link key={movie.id} to={`/movie/${movie.id}`} className="movie-image-link">

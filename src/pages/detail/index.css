@@ -1,0 +1,44 @@
+.description-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 2em;
+  word-wrap: break-word;
+  /* flex-wrap: nowrap; */
+}
+
+.images-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+}
+
+.image-detail {
+  width: 100%;
+  height: auto;
+  margin: 1em;
+}
+
+.description {
+  margin-bottom: 1em;
+}
+
+.movie-link {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 64em) {
+  .description-container {
+    padding: 3em 32em;
+  }
+
+  .image-detail {
+    max-width: 30%;
+  }
+
+  .images-container {
+    display: flex;
+    flex-direction: row;
+  }
+}

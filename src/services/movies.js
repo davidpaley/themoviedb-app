@@ -36,3 +36,9 @@ export async function search(titleToSearch) {
     method: 'GET',
   });
 }
+
+export async function getMovie(id) {
+  return request(`${URL}/movie/${id}?${API_KEY_LABEL}`, {
+    method: 'GET',
+  });
+}

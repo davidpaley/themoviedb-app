@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import MovieDetail from './pages/detail';
 import Home from './pages/home';
 import Header from './components/header';
+import Footer from './components/footer';
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/movie/:id" component={MovieDetail} />
         </div>
       </Router>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,8 @@
 .header {
-  background-image: url("movies.jpg");
+  background-image: url("black-banner.jpg");
+  background-repeat: no-repeat;
+    background-size: 100% 100%;
+  /* height: 100%; */
   padding: 60px;
   text-align: center;
   color: white;

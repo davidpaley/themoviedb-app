@@ -3,9 +3,7 @@ import './index.css';
 
 const Header = () => {
   return (
-    <header className="header">
-      <h1>Your favourite movies</h1>
-    </header>
+    <footer className="footer" />
   );
 }
 
