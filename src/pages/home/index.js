@@ -14,13 +14,25 @@ const Home = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    getDiscoverMovies().then(dataResponse => {
-      setMovies(dataResponse.results);
-    });
-    getConfiguration().then(response => {
-      setConfig(response);
-    })
+    let isCancelled = false;
+    const fetchDiscoverMovies = async () => {
+      const dataResponse = await getDiscoverMovies();
+      if (!isCancelled) {
+        setMovies(dataResponse.results);
+      }
+    };
+    const fetchConfiguration = async () => {
+      const response = await getConfiguration();
+      if (!isCancelled) {
+        setConfig(response);
+      }
+    };
     searchInput = '';
+    fetchDiscoverMovies();
+    fetchConfiguration();
+    return () => {
+      isCancelled = true;
+    };
   }, []);
 
   const handleSearchInput = (e) => {
@@ -72,10 +84,6 @@ const Home = () => {
         </Link>
       ))
   }
-
-  console.log(searchInput);
-  console.log(movies);
-  console.log(searchMovies);
   
   return (
     <div>

@@ -8,19 +8,28 @@ const MovieDetail = (props) => {
   const [config, setConfig] = useState({});
 
   useEffect(() => {
-    console.log('use efect')
+    let isCancelled = false;
     window.scrollTo(0, 0);
-    if (props && props.match && props.match.params && props.match.params.id) {
-      console.log('entro al if');
-      getMovie(props.match.params.id).then(dataResponse => {
-        console.log(dataResponse);
+    const fetchMovie = async (movieId) => {
+      const dataResponse = await getMovie(movieId);
+      if (!isCancelled) {
         setMovie(dataResponse);
-      });
-      getConfiguration().then(response => {
+      }
+    };
+    const fetchConfiguration = async () => {
+      const response = await getConfiguration();
+      if (!isCancelled) {
         setConfig(response);
-      })
+      }
+    };
+    if (props && props.match && props.match.params && props.match.params.id) {
+      fetchMovie(props.match.params.id);
+      fetchConfiguration();
     }
-  }, []);
+    return () => {
+      isCancelled = true;
+    };
+  }, [props]);
 
   if (movie && config && config.poster_sizes) {
     const { 
@@ -41,7 +50,6 @@ const MovieDetail = (props) => {
             to="/">
               {`< HOME`}
             </Link>
-          {/* <button className="home-button">{`< HOME`}</button> */}
         </div>
         <h1>{title}</h1>
         <div className="images-container">
