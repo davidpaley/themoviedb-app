@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getMovie, getConfiguration } from '../../services/movies';
 import { Link } from 'react-router-dom';
-import './index.css';
+import styles from './index.module.css';
 
 const MovieDetail = (props) => {
   const [movie, setMovie] = useState({});
@@ -44,57 +44,57 @@ const MovieDetail = (props) => {
     } = movie;
     return (
       <div>
-        <div className="home-button-container">
+        <div className={styles['home-button-container']}>
           <Link 
-            className="home-button"
+            className={styles['home-button']}
             to="/">
               {`< HOME`}
             </Link>
         </div>
         <h1>{title}</h1>
-        <div className="images-container">
+        <div className={styles['images-container']}>
           <img 
-            className="image-detail"
+            className={styles['image-detail']}
             src={`${config.base_url}/${config.poster_sizes[3]}/${poster_path}`} 
             alt=""
           />
         </div>
-        <div className="description-container">
+        <div className={styles['description-container']}>
           {genres &&
-          <div className="description">
+          <div className={styles['description']}>
             <span><strong>Genres: </strong></span>
             <span>{genres.map(g => g.name)}</span>
           </div>}
           {homepage &&
-          <div className="description">
+          <div className={styles['description']}>
             <span><strong>Home Page:: </strong></span>
             <a
               href={homepage} 
               // eslint-disable-next-line react/jsx-no-target-blank
               target="_blank" 
-              className="movie-link" >
+              className={styles['movie-link']}>
               {homepage}
             </a>
           </div>}
           {overview &&
-          <div className="description">
+          <div className={styles['description']}>
             <span><strong>Overview: </strong></span>
             <span>{overview}</span>
           </div>}
           {release_date &&
-          <div className="description">
+          <div className={styles['description']}>
             <span><strong>Release Date: </strong></span>
             <span>{release_date}</span>
           </div>}
           {revenue > 0 &&
-          <div className="description">
+          <div className={styles['description']}>
             <span><strong>Revenue: </strong></span>
             <span>{`$${revenue}`}</span>
           </div>}
         </div>
-        <div className="images-container">
+        <div className={styles['images-container']}>
           <img 
-            className="image-detail"
+            className={styles['image-detail']}
             src={`${config.base_url}/${config.poster_sizes[3]}/${backdrop_path}`} 
             alt=""
           />

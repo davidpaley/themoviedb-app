@@ -1,9 +1,9 @@
 import React from 'react';
-import './index.css';
+import styles from './index.module.css';
 
 const Header = () => {
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       Created by David Paley
     </footer>
   );

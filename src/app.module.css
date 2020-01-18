@@ -1,0 +1,13 @@
+.app-container {
+  text-align: center;
+}
+
+.body-section {
+  padding: 3em;
+}
+
+@media screen and (min-width: 64em) {
+  .body-section {
+    padding: 2em 5em;
+  }
+}

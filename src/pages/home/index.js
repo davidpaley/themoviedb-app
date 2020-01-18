@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getDiscoverMovies, getConfiguration, search } from '../../services/movies';
 import Raitings from '../../components/raitings';
 import { Link } from 'react-router-dom';
-import './index.css';
+import styles from './index.module.css';
 
 let searchInput = '';
 
@@ -71,13 +71,13 @@ const Home = () => {
       ))
     }
     if (moviesToShow.length === 0) {
-      return (<h2 className="cr-1">0 movies found..</h2>);
+      return (<h2 className={styles['cr-1']}>0 movies found..</h2>);
     }
     return config &&
       moviesToShow.map((movie) => (
-        <Link key={movie.id} to={`/movie/${movie.id}`} className="movie-image-link">
+        <Link key={movie.id} to={`/movie/${movie.id}`} className={styles['movie-image-link']}>
           <img 
-            className="image-in-grid"
+            className={styles['image-in-grid']}
             src={`${config.base_url}/${config.poster_sizes[2]}/${movie.poster_path}`} 
             alt=""
           />
@@ -87,14 +87,14 @@ const Home = () => {
   
   return (
     <div>
-      <div className="search-container">
+      <div className={styles['search-container']}>
         <input 
-          className="search-input" 
+          className={styles['search-input']}
           onChange={handleSearchInput}
           onKeyDown={handleKeyDown}
           placeholder="Search for a movie" />
         <button 
-          className="search-button"
+          className={styles['search-button']}
           onClick={handleSearch}>
           Search
         </button>
@@ -103,10 +103,10 @@ const Home = () => {
         starSelected={starSelected}
         handleStarSelected={handleStarSelected}
       />
-      <div className="movie-grid">
+      <div className={styles['movie-grid']}>
         {searchInput && searchMovies.length > 0 && renderMovies(searchMovies)}
         {!searchInput && movies.length > 0 && renderMovies(movies)}
-        {searchInput && searchMovies.length === 0 && <h2 className="cr-1">0 movies found..</h2>}
+        {searchInput && searchMovies.length === 0 && <h2 className={styles['cr-1']}>0 movies found..</h2>}
         
       </div>
     </div>

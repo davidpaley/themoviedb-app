@@ -1,34 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.css';
+import styles from './index.module.css';
 
 const Raitings = ({ starSelected, handleStarSelected }) => {
   return (
-    <div className="raiting-container">
+    <div className={styles.raitingContainer}>
       <span>Filter by rating:</span>
-      <div className="rating">  
+      <div className={styles.rating}>  
         <span 
-          className={starSelected > 4 ? 'ratingSelected' : 'raitingWithoutCalor'}
+          className={starSelected > 4 ? styles.ratingSelected : styles.raitingWithoutCalor}
           onClick={handleStarSelected(5)}>
             ☆
         </span>
         <span 
-          className={starSelected > 3 ? 'ratingSelected' : 'raitingWithoutCalor'}
+          className={starSelected > 3 ? styles.ratingSelected : styles.raitingWithoutCalor}
           onClick={handleStarSelected(4)}>
             ☆
         </span>
         <span 
-          className={starSelected > 2 ? 'ratingSelected' : 'raitingWithoutCalor'}
+          className={starSelected > 2 ? styles.ratingSelected : styles.raitingWithoutCalor}
           onClick={handleStarSelected(3)}>
             ☆
         </span>
         <span 
-          className={starSelected > 1 ? 'ratingSelected' : 'raitingWithoutCalor'}
+          className={starSelected > 1 ? styles.ratingSelected : styles.raitingWithoutCalor}
           onClick={handleStarSelected(2)}>
             ☆
         </span>
         <span 
-          className={starSelected > 0 ? 'ratingSelected' : 'raitingWithoutCalor'}
+          className={starSelected > 0 ? styles.ratingSelected : styles.raitingWithoutCalor}
           onClick={handleStarSelected(1)}>
             ☆
         </span>
